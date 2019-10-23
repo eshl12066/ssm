@@ -1,0 +1,31 @@
+{
+  "name" : "YlBxlx",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "bno",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "bname",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "bratio",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.slwx",
+  "savePath" : "./yl1/src/main/java/com/slwx",
+  "saveModelName" : "yl1"
+}

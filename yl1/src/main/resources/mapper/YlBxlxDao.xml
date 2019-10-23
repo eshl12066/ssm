@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlBxlxDao">
+
+    <resultMap type="com.slwx.entity.YlBxlx" id="YlBxlxMap">
+        <result property="bno" column="Bno" jdbcType="LONG INTEGER"/>
+        <result property="bname" column="Bname" jdbcType="VARCHAR"/>
+        <result property="bratio" column="Bratio" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlBxlxMap">
+        select
+          Bno, Bname, Bratio
+        from db_1023.yl_bxlx
+        where Bno = #{bno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlBxlxMap">
+        select
+          Bno, Bname, Bratio
+        from db_1023.yl_bxlx
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlBxlxMap">
+        select
+          Bno, Bname, Bratio
+        from db_1023.yl_bxlx
+        <where>
+            <if test="bno != null">
+                and Bno = #{bno}
+            </if>
+            <if test="bname != null and bname != ''">
+                and Bname = #{bname}
+            </if>
+            <if test="bratio != null">
+                and Bratio = #{bratio}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="bno" useGeneratedKeys="true">
+        insert into db_1023.yl_bxlx(Bname, Bratio)
+        values (#{bname}, #{bratio})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_bxlx
+        <set>
+            <if test="bname != null and bname != ''">
+                Bname = #{bname},
+            </if>
+            <if test="bratio != null">
+                Bratio = #{bratio},
+            </if>
+        </set>
+        where Bno = #{bno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_bxlx where Bno = #{bno}
+    </delete>
+
+</mapper>

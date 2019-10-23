@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlDdDao">
+
+    <resultMap type="com.slwx.entity.YlDd" id="YlDdMap">
+        <result property="ydid" column="Ydid" jdbcType="LONG INTEGER"/>
+        <result property="pno" column="Pno" jdbcType="LONG INTEGER"/>
+        <result property="dno" column="Dno" jdbcType="LONG INTEGER"/>
+        <result property="sfjf" column="Sfjf" jdbcType="INTEGER"/>
+        <result property="sfny" column="Sfny" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlDdMap">
+        select
+          Ydid, Pno, Dno, Sfjf, Sfny
+        from db_1023.yl_dd
+        where Ydid = #{ydid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlDdMap">
+        select
+          Ydid, Pno, Dno, Sfjf, Sfny
+        from db_1023.yl_dd
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlDdMap">
+        select
+          Ydid, Pno, Dno, Sfjf, Sfny
+        from db_1023.yl_dd
+        <where>
+            <if test="ydid != null">
+                and Ydid = #{ydid}
+            </if>
+            <if test="pno != null">
+                and Pno = #{pno}
+            </if>
+            <if test="dno != null">
+                and Dno = #{dno}
+            </if>
+            <if test="sfjf != null">
+                and Sfjf = #{sfjf}
+            </if>
+            <if test="sfny != null">
+                and Sfny = #{sfny}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="ydid" useGeneratedKeys="true">
+        insert into db_1023.yl_dd(Pno, Dno, Sfjf, Sfny)
+        values (#{pno}, #{dno}, #{sfjf}, #{sfny})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_dd
+        <set>
+            <if test="pno != null">
+                Pno = #{pno},
+            </if>
+            <if test="dno != null">
+                Dno = #{dno},
+            </if>
+            <if test="sfjf != null">
+                Sfjf = #{sfjf},
+            </if>
+            <if test="sfny != null">
+                Sfny = #{sfny},
+            </if>
+        </set>
+        where Ydid = #{ydid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_dd where Ydid = #{ydid}
+    </delete>
+
+</mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlKsDao">
+
+    <resultMap type="com.slwx.entity.YlKs" id="YlKsMap">
+        <result property="sno" column="Sno" jdbcType="LONG INTEGER"/>
+        <result property="sname" column="Sname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlKsMap">
+        select
+          Sno, Sname
+        from db_1023.yl_ks
+        where Sno = #{sno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlKsMap">
+        select
+          Sno, Sname
+        from db_1023.yl_ks
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlKsMap">
+        select
+          Sno, Sname
+        from db_1023.yl_ks
+        <where>
+            <if test="sno != null">
+                and Sno = #{sno}
+            </if>
+            <if test="sname != null and sname != ''">
+                and Sname = #{sname}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="sno" useGeneratedKeys="true">
+        insert into db_1023.yl_ks(Sname)
+        values (#{sname})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_ks
+        <set>
+            <if test="sname != null and sname != ''">
+                Sname = #{sname},
+            </if>
+        </set>
+        where Sno = #{sno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_ks where Sno = #{sno}
+    </delete>
+
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlUserDao">
+
+    <resultMap type="com.slwx.entity.YlUser" id="YlUserMap">
+        <result property="uid" column="Uid" jdbcType="LONG INTEGER"/>
+        <result property="name" column="Name" jdbcType="VARCHAR"/>
+        <result property="password" column="Password" jdbcType="VARCHAR"/>
+        <result property="jid" column="Jid" jdbcType="LONG INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlUserMap">
+        select
+          Uid, Name, Password, Jid
+        from db_1023.yl_user
+        where Uid = #{uid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlUserMap">
+        select
+          Uid, Name, Password, Jid
+        from db_1023.yl_user
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlUserMap">
+        select
+          Uid, Name, Password, Jid
+        from db_1023.yl_user
+        <where>
+            <if test="uid != null">
+                and Uid = #{uid}
+            </if>
+            <if test="name != null and name != ''">
+                and Name = #{name}
+            </if>
+            <if test="password != null and password != ''">
+                and Password = #{password}
+            </if>
+            <if test="jid != null">
+                and Jid = #{jid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="uid" useGeneratedKeys="true">
+        insert into db_1023.yl_user(Name, Password, Jid)
+        values (#{name}, #{password}, #{jid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_user
+        <set>
+            <if test="name != null and name != ''">
+                Name = #{name},
+            </if>
+            <if test="password != null and password != ''">
+                Password = #{password},
+            </if>
+            <if test="jid != null">
+                Jid = #{jid},
+            </if>
+        </set>
+        where Uid = #{uid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_user where Uid = #{uid}
+    </delete>
+
+</mapper>
