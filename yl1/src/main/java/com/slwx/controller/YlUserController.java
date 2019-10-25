@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * (YlUser)表控制层
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-24 16:21:12
  */
 @RestController
 @RequestMapping("ylUser")
@@ -32,4 +32,8 @@ public class YlUserController {
         return this.ylUserService.queryById(id);
     }
 
+    @GetMapping("login")
+    public int login(YlUser ylUser) {
+        return this.ylUserService.login(ylUser);
+    }
 }

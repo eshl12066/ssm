@@ -10,7 +10,7 @@
 
     <!-- 别名 -->
     <typeAliases>
-        <typeAlias type="com.shl.model.Book" alias="Book"/>
+        <!--<typeAlias type="com.shl.model.Book" alias="Book"/>-->
     </typeAliases>
 
     <plugins>
@@ -42,6 +42,6 @@
     </environments>
 
     <mappers>
-       <mapper resource="com/shl/mapper/BookMapper.xml"/>
+       <!--<mapper resource="com/shl/mapper/BookMapper.xml"/>-->
     </mappers>
 </configuration>

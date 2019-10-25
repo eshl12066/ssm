@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlZdxxDao">
+
+    <resultMap type="com.slwx.entity.YlZdxx" id="YlZdxxMap">
+        <result property="rid" column="Rid" />
+        <result property="ddate" column="Ddate" />
+        <result property="dname" column="Dname" />
+        <result property="pname" column="Pname" />
+        <result property="dmnos" column="Dmnos" />
+        <result property="sno" column="Sno" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlZdxxMap">
+        select
+          Rid, Ddate, Dname, Pname, Dmnos, Sno
+        from db_1023.yl_zdxx
+        where Rid = #{rid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlZdxxMap">
+        select
+          Rid, Ddate, Dname, Pname, Dmnos, Sno
+        from db_1023.yl_zdxx
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlZdxxMap">
+        select
+          Rid, Ddate, Dname, Pname, Dmnos, Sno
+        from db_1023.yl_zdxx
+        <where>
+            <if test="rid != null">
+                and Rid = #{rid}
+            </if>
+            <if test="ddate != null">
+                and Ddate = #{ddate}
+            </if>
+            <if test="dname != null and dname != ''">
+                and Dname = #{dname}
+            </if>
+            <if test="pname != null and pname != ''">
+                and Pname = #{pname}
+            </if>
+            <if test="dmnos != null and dmnos != ''">
+                and Dmnos = #{dmnos}
+            </if>
+            <if test="sno != null">
+                and Sno = #{sno}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="rid" useGeneratedKeys="true">
+        insert into db_1023.yl_zdxx(Ddate, Dname, Pname, Dmnos, Sno)
+        values (#{ddate}, #{dname}, #{pname}, #{dmnos}, #{sno})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_zdxx
+        <set>
+            <if test="ddate != null">
+                Ddate = #{ddate},
+            </if>
+            <if test="dname != null and dname != ''">
+                Dname = #{dname},
+            </if>
+            <if test="pname != null and pname != ''">
+                Pname = #{pname},
+            </if>
+            <if test="dmnos != null and dmnos != ''">
+                Dmnos = #{dmnos},
+            </if>
+            <if test="sno != null">
+                Sno = #{sno},
+            </if>
+        </set>
+        where Rid = #{rid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_zdxx where Rid = #{rid}
+    </delete>
+
+</mapper>

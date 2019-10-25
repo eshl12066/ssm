@@ -12,7 +12,7 @@ import java.util.List;
  * (YlGh)表服务实现类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-24 16:21:11
  */
 @Service("ylGhService")
 public class YlGhServiceImpl implements YlGhService {

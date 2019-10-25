@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlMzykDao">
+
+    <resultMap type="com.slwx.entity.YlMzyk" id="YlMzykMap">
+        <result property="myno" column="Myno" />
+        <result property="myname" column="Myname" />
+        <result property="myprice" column="Myprice" />
+        <result property="mylx" column="Mylx" />
+        <result property="mykc" column="Mykc" />
+        <result property="mybx" column="Mybx" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlMzykMap">
+        select
+          Myno, Myname, Myprice, Mylx, Mykc, Mybx
+        from db_1023.yl_mzyk
+        where Myno = #{myno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlMzykMap">
+        select
+          Myno, Myname, Myprice, Mylx, Mykc, Mybx
+        from db_1023.yl_mzyk
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlMzykMap">
+        select
+          Myno, Myname, Myprice, Mylx, Mykc, Mybx
+        from db_1023.yl_mzyk
+        <where>
+            <if test="myno != null">
+                and Myno = #{myno}
+            </if>
+            <if test="myname != null and myname != ''">
+                and Myname = #{myname}
+            </if>
+            <if test="myprice != null">
+                and Myprice = #{myprice}
+            </if>
+            <if test="mylx != null">
+                and Mylx = #{mylx}
+            </if>
+            <if test="mykc != null">
+                and Mykc = #{mykc}
+            </if>
+            <if test="mybx != null">
+                and Mybx = #{mybx}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="myno" useGeneratedKeys="true">
+        insert into db_1023.yl_mzyk(Myname, Myprice, Mylx, Mykc, Mybx)
+        values (#{myname}, #{myprice}, #{mylx}, #{mykc}, #{mybx})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_mzyk
+        <set>
+            <if test="myname != null and myname != ''">
+                Myname = #{myname},
+            </if>
+            <if test="myprice != null">
+                Myprice = #{myprice},
+            </if>
+            <if test="mylx != null">
+                Mylx = #{mylx},
+            </if>
+            <if test="mykc != null">
+                Mykc = #{mykc},
+            </if>
+            <if test="mybx != null">
+                Mybx = #{mybx},
+            </if>
+        </set>
+        where Myno = #{myno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_mzyk where Myno = #{myno}
+    </delete>
+
+</mapper>

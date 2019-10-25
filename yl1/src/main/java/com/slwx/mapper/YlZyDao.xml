@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlZyDao">
+
+    <resultMap type="com.slwx.entity.YlZy" id="YlZyMap">
+        <result property="zyid" column="Zyid" />
+        <result property="ihno" column="IHno" />
+        <result property="zyd" column="Zyd" />
+        <result property="zdjg" column="Zdjg" />
+        <result property="zdks" column="Zdks" />
+        <result property="zytime" column="Zytime" />
+        <result property="zyyy" column="Zyyy" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlZyMap">
+        select
+          Zyid, IHno, Zyd, Zdjg, Zdks, Zytime, Zyyy
+        from db_1023.yl_zy
+        where Zyid = #{zyid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlZyMap">
+        select
+          Zyid, IHno, Zyd, Zdjg, Zdks, Zytime, Zyyy
+        from db_1023.yl_zy
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlZyMap">
+        select
+          Zyid, IHno, Zyd, Zdjg, Zdks, Zytime, Zyyy
+        from db_1023.yl_zy
+        <where>
+            <if test="zyid != null">
+                and Zyid = #{zyid}
+            </if>
+            <if test="ihno != null">
+                and IHno = #{ihno}
+            </if>
+            <if test="zyd != null and zyd != ''">
+                and Zyd = #{zyd}
+            </if>
+            <if test="zdjg != null and zdjg != ''">
+                and Zdjg = #{zdjg}
+            </if>
+            <if test="zdks != null">
+                and Zdks = #{zdks}
+            </if>
+            <if test="zytime != null">
+                and Zytime = #{zytime}
+            </if>
+            <if test="zyyy != null and zyyy != ''">
+                and Zyyy = #{zyyy}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="zyid" useGeneratedKeys="true">
+        insert into db_1023.yl_zy(IHno, Zyd, Zdjg, Zdks, Zytime, Zyyy)
+        values (#{ihno}, #{zyd}, #{zdjg}, #{zdks}, #{zytime}, #{zyyy})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_zy
+        <set>
+            <if test="ihno != null">
+                IHno = #{ihno},
+            </if>
+            <if test="zyd != null and zyd != ''">
+                Zyd = #{zyd},
+            </if>
+            <if test="zdjg != null and zdjg != ''">
+                Zdjg = #{zdjg},
+            </if>
+            <if test="zdks != null">
+                Zdks = #{zdks},
+            </if>
+            <if test="zytime != null">
+                Zytime = #{zytime},
+            </if>
+            <if test="zyyy != null and zyyy != ''">
+                Zyyy = #{zyyy},
+            </if>
+        </set>
+        where Zyid = #{zyid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_zy where Zyid = #{zyid}
+    </delete>
+
+</mapper>

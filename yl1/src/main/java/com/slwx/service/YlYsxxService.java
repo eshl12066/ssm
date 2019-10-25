@@ -7,7 +7,7 @@ import java.util.List;
  * (YlYsxx)表服务接口
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-24 16:21:21
  */
 public interface YlYsxxService {
 

@@ -8,7 +8,7 @@ import java.util.List;
  * (YlBc)表数据库访问层
  *
  * @author makejava
- * @since 2019-10-23 16:41:17
+ * @since 2019-10-24 15:52:56
  */
 public interface YlBcDao {
 

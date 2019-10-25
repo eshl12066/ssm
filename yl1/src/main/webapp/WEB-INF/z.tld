@@ -13,7 +13,7 @@
 
  <tag>
     <name>page</name>
-    <tag-class>com.shl.util.PageTag</tag-class>
+    <tag-class>com.slwx.util.PageTag</tag-class>
     <body-content>JSP</body-content>
     <attribute>
         <name>pageBean</name>

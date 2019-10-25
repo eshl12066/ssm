@@ -7,7 +7,7 @@ import java.util.List;
  * (YlBc)表服务接口
  *
  * @author makejava
- * @since 2019-10-23 16:41:17
+ * @since 2019-10-24 15:53:31
  */
 public interface YlBcService {
 

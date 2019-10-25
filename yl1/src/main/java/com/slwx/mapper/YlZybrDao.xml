@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlZybrDao">
+
+    <resultMap type="com.slwx.entity.YlZybr" id="YlZybrMap">
+        <result property="ihno" column="IHno" />
+        <result property="bfid" column="Bfid" />
+        <result property="brname" column="Brname" />
+        <result property="bcid" column="Bcid" />
+        <result property="dno" column="Dno" />
+        <result property="dadevice" column="Dadevice" />
+        <result property="itime" column="ITime" />
+        <result property="otime" column="Otime" />
+        <result property="ychange" column="Ychange" />
+        <result property="bno" column="Bno" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlZybrMap">
+        select
+          IHno, Bfid, Brname, Bcid, Dno, Dadevice, ITime, Otime, Ychange, Bno
+        from db_1023.yl_zybr
+        where IHno = #{ihno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlZybrMap">
+        select
+          IHno, Bfid, Brname, Bcid, Dno, Dadevice, ITime, Otime, Ychange, Bno
+        from db_1023.yl_zybr
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlZybrMap">
+        select
+          IHno, Bfid, Brname, Bcid, Dno, Dadevice, ITime, Otime, Ychange, Bno
+        from db_1023.yl_zybr
+        <where>
+            <if test="ihno != null">
+                and IHno = #{ihno}
+            </if>
+            <if test="bfid != null">
+                and Bfid = #{bfid}
+            </if>
+            <if test="brname != null and brname != ''">
+                and Brname = #{brname}
+            </if>
+            <if test="bcid != null">
+                and Bcid = #{bcid}
+            </if>
+            <if test="dno != null">
+                and Dno = #{dno}
+            </if>
+            <if test="dadevice != null and dadevice != ''">
+                and Dadevice = #{dadevice}
+            </if>
+            <if test="itime != null">
+                and ITime = #{itime}
+            </if>
+            <if test="otime != null">
+                and Otime = #{otime}
+            </if>
+            <if test="ychange != null">
+                and Ychange = #{ychange}
+            </if>
+            <if test="bno != null">
+                and Bno = #{bno}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="ihno" useGeneratedKeys="true">
+        insert into db_1023.yl_zybr(Bfid, Brname, Bcid, Dno, Dadevice, ITime, Otime, Ychange, Bno)
+        values (#{bfid}, #{brname}, #{bcid}, #{dno}, #{dadevice}, #{itime}, #{otime}, #{ychange}, #{bno})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_zybr
+        <set>
+            <if test="bfid != null">
+                Bfid = #{bfid},
+            </if>
+            <if test="brname != null and brname != ''">
+                Brname = #{brname},
+            </if>
+            <if test="bcid != null">
+                Bcid = #{bcid},
+            </if>
+            <if test="dno != null">
+                Dno = #{dno},
+            </if>
+            <if test="dadevice != null and dadevice != ''">
+                Dadevice = #{dadevice},
+            </if>
+            <if test="itime != null">
+                ITime = #{itime},
+            </if>
+            <if test="otime != null">
+                Otime = #{otime},
+            </if>
+            <if test="ychange != null">
+                Ychange = #{ychange},
+            </if>
+            <if test="bno != null">
+                Bno = #{bno},
+            </if>
+        </set>
+        where IHno = #{ihno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_zybr where IHno = #{ihno}
+    </delete>
+
+</mapper>

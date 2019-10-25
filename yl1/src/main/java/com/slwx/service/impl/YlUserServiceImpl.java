@@ -12,7 +12,7 @@ import java.util.List;
  * (YlUser)表服务实现类
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-24 16:21:12
  */
 @Service("ylUserService")
 public class YlUserServiceImpl implements YlUserService {
@@ -75,5 +75,10 @@ public class YlUserServiceImpl implements YlUserService {
     @Override
     public boolean deleteById(Long uid) {
         return this.ylUserDao.deleteById(uid) > 0;
+    }
+
+    @Override
+    public int login(YlUser ylUser) {
+        return this.ylUserDao.login(ylUser);
     }
 }

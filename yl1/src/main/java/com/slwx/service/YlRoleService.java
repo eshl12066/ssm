@@ -7,7 +7,7 @@ import java.util.List;
  * (YlRole)表服务接口
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-24 16:21:12
  */
 public interface YlRoleService {
 

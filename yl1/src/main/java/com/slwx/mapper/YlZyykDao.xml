@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlZyykDao">
+
+    <resultMap type="com.slwx.entity.YlZyyk" id="YlZyykMap">
+        <result property="zyno" column="Zyno" />
+        <result property="zyname" column="Zyname" />
+        <result property="zyprice" column="Zyprice" />
+        <result property="zylx" column="Zylx" />
+        <result property="zykc" column="Zykc" />
+        <result property="zybx" column="Zybx" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlZyykMap">
+        select
+          Zyno, Zyname, Zyprice, Zylx, Zykc, Zybx
+        from db_1023.yl_zyyk
+        where Zyno = #{zyno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlZyykMap">
+        select
+          Zyno, Zyname, Zyprice, Zylx, Zykc, Zybx
+        from db_1023.yl_zyyk
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlZyykMap">
+        select
+          Zyno, Zyname, Zyprice, Zylx, Zykc, Zybx
+        from db_1023.yl_zyyk
+        <where>
+            <if test="zyno != null">
+                and Zyno = #{zyno}
+            </if>
+            <if test="zyname != null and zyname != ''">
+                and Zyname = #{zyname}
+            </if>
+            <if test="zyprice != null">
+                and Zyprice = #{zyprice}
+            </if>
+            <if test="zylx != null">
+                and Zylx = #{zylx}
+            </if>
+            <if test="zykc != null">
+                and Zykc = #{zykc}
+            </if>
+            <if test="zybx != null">
+                and Zybx = #{zybx}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="zyno" useGeneratedKeys="true">
+        insert into db_1023.yl_zyyk(Zyname, Zyprice, Zylx, Zykc, Zybx)
+        values (#{zyname}, #{zyprice}, #{zylx}, #{zykc}, #{zybx})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_zyyk
+        <set>
+            <if test="zyname != null and zyname != ''">
+                Zyname = #{zyname},
+            </if>
+            <if test="zyprice != null">
+                Zyprice = #{zyprice},
+            </if>
+            <if test="zylx != null">
+                Zylx = #{zylx},
+            </if>
+            <if test="zykc != null">
+                Zykc = #{zykc},
+            </if>
+            <if test="zybx != null">
+                Zybx = #{zybx},
+            </if>
+        </set>
+        where Zyno = #{zyno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_zyyk where Zyno = #{zyno}
+    </delete>
+
+</mapper>

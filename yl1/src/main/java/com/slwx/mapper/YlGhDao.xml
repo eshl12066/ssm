@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.slwx.dao.YlGhDao">
+
+    <resultMap type="com.slwx.entity.YlGh" id="YlGhMap">
+        <result property="rno" column="Rno" />
+        <result property="pname" column="Pname" />
+        <result property="pid" column="Pid" />
+        <result property="rcost" column="Rcost" />
+        <result property="sname" column="Sname" />
+        <result property="dno" column="Dno" />
+        <result property="rtime" column="Rtime" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="YlGhMap">
+        select
+          Rno, Pname, Pid, Rcost, Sname, Dno, Rtime
+        from db_1023.yl_gh
+        where Rno = #{rno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="YlGhMap">
+        select
+          Rno, Pname, Pid, Rcost, Sname, Dno, Rtime
+        from db_1023.yl_gh
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="YlGhMap">
+        select
+          Rno, Pname, Pid, Rcost, Sname, Dno, Rtime
+        from db_1023.yl_gh
+        <where>
+            <if test="rno != null">
+                and Rno = #{rno}
+            </if>
+            <if test="pname != null and pname != ''">
+                and Pname = #{pname}
+            </if>
+            <if test="pid != null">
+                and Pid = #{pid}
+            </if>
+            <if test="rcost != null and rcost != ''">
+                and Rcost = #{rcost}
+            </if>
+            <if test="sname != null and sname != ''">
+                and Sname = #{sname}
+            </if>
+            <if test="dno != null">
+                and Dno = #{dno}
+            </if>
+            <if test="rtime != null">
+                and Rtime = #{rtime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="rno" useGeneratedKeys="true">
+        insert into db_1023.yl_gh(Pname, Pid, Rcost, Sname, Dno, Rtime)
+        values (#{pname}, #{pid}, #{rcost}, #{sname}, #{dno}, #{rtime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update db_1023.yl_gh
+        <set>
+            <if test="pname != null and pname != ''">
+                Pname = #{pname},
+            </if>
+            <if test="pid != null">
+                Pid = #{pid},
+            </if>
+            <if test="rcost != null and rcost != ''">
+                Rcost = #{rcost},
+            </if>
+            <if test="sname != null and sname != ''">
+                Sname = #{sname},
+            </if>
+            <if test="dno != null">
+                Dno = #{dno},
+            </if>
+            <if test="rtime != null">
+                Rtime = #{rtime},
+            </if>
+        </set>
+        where Rno = #{rno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from db_1023.yl_gh where Rno = #{rno}
+    </delete>
+
+</mapper>
