@@ -34,7 +34,7 @@
         <!-- 身份验证失败，跳转到登录页面 -->
         <property name="loginUrl" value="/login"/>
         <!-- 身份验证成功，跳转到指定页面 -->
-        <!--<property name="successUrl" value="/index.jsp"/>-->
+        <property name="successUrl" value="/index.jsp"/>
         <!-- 权限验证失败，跳转到指定页面 -->
         <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
         <!-- Shiro连接约束配置,即过滤链的定义 -->

@@ -33,7 +33,9 @@ public class YlUserController {
     }
 
     @GetMapping("login")
+    @ResponseBody
     public int login(YlUser ylUser) {
+        System.out.println("你吗的用户："+ylUser.getName());
         return this.ylUserService.login(ylUser);
     }
 }
