@@ -2,6 +2,8 @@ package com.slwx.dao;
 
 import com.slwx.entity.YlUser;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2019-10-24 16:21:12
  */
+@Component
 public interface YlUserDao {
 
     /**
@@ -62,5 +65,5 @@ public interface YlUserDao {
      */
     int deleteById(Long uid);
 
-    int login(YlUser ylUser);
+    YlUser login(YlUser ylUser);
 }

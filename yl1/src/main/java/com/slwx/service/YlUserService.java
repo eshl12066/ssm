@@ -52,6 +52,6 @@ public interface YlUserService {
      */
     boolean deleteById(Long uid);
 
-    int login(YlUser ylUser);
+    YlUser login(YlUser ylUser);
 
 }

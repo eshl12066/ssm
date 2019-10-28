@@ -52,6 +52,18 @@
         <property name="defaultErrorView" value="unauthorized"/>
     </bean>
 
+    <!--    注册拦截器-->
+    <mvc:interceptors>
+        <!--这是解决跨域请求问题-->
+        <mvc:interceptor>
+            <!-- 拦截的方法 -->
+            <mvc:mapping path="/**" />
+            <!-- 具体的拦截器 -->
+            <bean id="corsInterceptor" class="com.slwx.util.CorsInterceptor">
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
     <!--4) 单独处理图片、样式、js等资源 -->
     <!--<mvc:resources location="/css/" mapping="/css/**"/>-->

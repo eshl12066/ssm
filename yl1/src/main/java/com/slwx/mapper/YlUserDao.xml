@@ -76,7 +76,7 @@
     </delete>
 
     <!-- **********************************************GD************************************************** -->
-    <select id="login" resultType="java.lang.Integer" parameterMap="com.slwx.entity.YlUser">
+    <select id="login" resultType="com.slwx.entity.YlUser" parameterType="com.slwx.entity.YlUser">
         select * from yl_user where Name = #{name} and  Password = #{password}
     </select>
 </mapper>

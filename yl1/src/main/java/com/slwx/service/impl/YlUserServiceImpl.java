@@ -3,6 +3,7 @@ package com.slwx.service.impl;
 import com.slwx.entity.YlUser;
 import com.slwx.dao.YlUserDao;
 import com.slwx.service.YlUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,9 +15,9 @@ import java.util.List;
  * @author makejava
  * @since 2019-10-24 16:21:12
  */
-@Service("ylUserService")
+@Service
 public class YlUserServiceImpl implements YlUserService {
-    @Resource
+    @Autowired
     private YlUserDao ylUserDao;
 
     /**
@@ -78,7 +79,7 @@ public class YlUserServiceImpl implements YlUserService {
     }
 
     @Override
-    public int login(YlUser ylUser) {
+    public YlUser login(YlUser ylUser) {
         return this.ylUserDao.login(ylUser);
     }
 }
