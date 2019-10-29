@@ -1,10 +1,12 @@
 package com.slwx.dao;
 
 import com.slwx.entity.YlUser;
+import com.slwx.entity.vo.YlUserVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * (YlUser)表数据库访问层
@@ -66,4 +68,10 @@ public interface YlUserDao {
     int deleteById(Long uid);
 
     YlUser login(YlUser ylUser);
+
+    YlUserVo queryByName(String uname);
+
+    Set<String> getRolesByUserId(Integer uid);
+
+    Set<String> getPersByUserId(Integer uid);
 }

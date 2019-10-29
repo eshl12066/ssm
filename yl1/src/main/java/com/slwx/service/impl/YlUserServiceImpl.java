@@ -2,12 +2,14 @@ package com.slwx.service.impl;
 
 import com.slwx.entity.YlUser;
 import com.slwx.dao.YlUserDao;
+import com.slwx.entity.vo.YlUserVo;
 import com.slwx.service.YlUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
 
 /**
  * (YlUser)表服务实现类
@@ -15,7 +17,7 @@ import java.util.List;
  * @author makejava
  * @since 2019-10-24 16:21:12
  */
-@Service
+@Service("ylUserService")
 public class YlUserServiceImpl implements YlUserService {
     @Autowired
     private YlUserDao ylUserDao;
@@ -81,5 +83,20 @@ public class YlUserServiceImpl implements YlUserService {
     @Override
     public YlUser login(YlUser ylUser) {
         return this.ylUserDao.login(ylUser);
+    }
+
+    @Override
+    public YlUserVo queryByName(String uname) {
+        return this.ylUserDao.queryByName(uname);
+    }
+
+    @Override
+    public Set<String> getRolesByUserId(Integer uid) {
+        return this.ylUserDao.getRolesByUserId(uid);
+    }
+
+    @Override
+    public Set<String> getPersByUserId(Integer uid) {
+        return this.ylUserDao.getPersByUserId(uid);
     }
 }

@@ -5,7 +5,7 @@
 
     <!--配置自定义的Realm-->
     <bean id="shiroRealm" class="com.slwx.util.MyRealm">
-        <!--<property name="shiroUserService" ref="shiroUserService" />-->
+        <property name="ylUserService" ref="ylUserService" />
         <!--注意：重要的事情说三次~~~~~~此处加密方式要与用户注册时的算法一致 -->
         <!--注意：重要的事情说三次~~~~~~此处加密方式要与用户注册时的算法一致 -->
         <!--注意：重要的事情说三次~~~~~~此处加密方式要与用户注册时的算法一致 -->

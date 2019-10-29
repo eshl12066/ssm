@@ -76,7 +76,26 @@
     </delete>
 
     <!-- **********************************************GD************************************************** -->
-    <select id="login" resultType="com.slwx.entity.YlUser" parameterType="com.slwx.entity.YlUser">
+    <select id="logi" resultType="com.slwx.entity.YlUser" parameterType="com.slwx.entity.YlUser">
         select * from yl_user where Name = #{name} and  Password = #{password}
     </select>
+
+    <select id="queryyName" resultType="com.slwx.entity.YlUser" parameterType="java.lang.String">
+        select
+        *
+        from yl_user
+        where name = #{uname}
+    </select>
+
+    <select id="getRolesyUserId" resultType="java.lang.String" parameterType="java.lang.Integer">
+  select r.Jid from yl_user u,yl_u_role ur,yl_role r
+    where u.Uid = ur.Uid and ur.Jid = r.Jid
+    and u.Uid = #{uid}
+</select>
+
+    <select id="getPersyUserId" resultType="java.lang.String" parameterType="java.lang.Integer">
+  select p.Url from yl_user u,yl_u_role ur,yl_r_per rp,yl_per p
+  where u.Uid = ur.Uid and ur.Jid = rp.Jid and rp.Perid = p.Perid
+  and u.Uid = #{uid}
+</select>
 </mapper>
