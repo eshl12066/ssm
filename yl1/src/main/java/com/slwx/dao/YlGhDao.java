@@ -2,7 +2,10 @@ package com.slwx.dao;
 
 import com.slwx.entity.YlGh;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlGh)表数据库访问层
@@ -10,6 +13,7 @@ import java.util.List;
  * @author makejava
  * @since 2019-10-24 16:21:11
  */
+@Repository
 public interface YlGhDao {
 
     /**
@@ -62,4 +66,6 @@ public interface YlGhDao {
      */
     int deleteById(Long rno);
 
+
+    List<Map> selectgetAll(YlGh ylGh);
 }
