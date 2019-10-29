@@ -1,7 +1,10 @@
 package com.slwx.service;
 
 import com.slwx.entity.YlUser;
+import com.slwx.entity.vo.YlUserVo;
+
 import java.util.List;
+import java.util.Set;
 
 /**
  * (YlUser)表服务接口
@@ -54,4 +57,9 @@ public interface YlUserService {
 
     YlUser login(YlUser ylUser);
 
+    YlUserVo queryByName(String uname);
+
+    Set<String> getRolesByUserId(Integer uid);
+
+    Set<String> getPersByUserId(Integer uid);
 }

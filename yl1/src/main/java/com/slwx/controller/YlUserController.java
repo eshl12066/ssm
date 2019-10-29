@@ -10,10 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,10 +35,16 @@ public class YlUserController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-
-
-    @RequestMapping("/login")
+    @RequestMapping("/add")
     @ResponseBody
+    public JSONResult add(YlUser u, HttpServletRequest request, HttpServletResponse response){
+
+        return JSONResult.ok();
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/login")
     public JSONResult login(YlUser u, HttpServletRequest request, HttpServletResponse response){
         //获取用户输入的验证码
         String userVerificationCode = request.getParameter("verificationCode");
@@ -82,6 +86,9 @@ public class YlUserController {
     @RequestMapping("/verificationCode")
     @ResponseBody
     public String verificationCode(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+
+
         //生成验证码随机数
         String word = VerifyCodeUtil.produceNumAndChar(4);
 //        获取用户的jwt令牌

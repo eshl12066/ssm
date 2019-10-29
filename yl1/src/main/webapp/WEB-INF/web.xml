@@ -13,6 +13,15 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
+  <!-- 解决cors跨域问题过滤器 -->
+  <filter>
+    <filter-name>corsFilter</filter-name>
+    <filter-class>com.slwx.util.CorsFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>corsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <!-- 读取Spring上下文的监听器 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

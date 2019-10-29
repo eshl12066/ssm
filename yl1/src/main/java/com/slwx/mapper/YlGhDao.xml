@@ -31,7 +31,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="YlGhMap">
         select
-          Rno, Pname, Pid, Rcost, Sname, Dno, Rtime
+          Rno, Pname, Pid, Rcost, Sname, Dno, Rtime,Psex,Page
         from db_1023.yl_gh
         <where>
             <if test="rno != null">
@@ -55,13 +55,21 @@
             <if test="rtime != null">
                 and Rtime = #{rtime}
             </if>
+            <if test="Psex != null">
+                and Psex = #{psex}
+            </if>
+            <if test="Page != null">
+                and Page = #{page}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="rno" useGeneratedKeys="true">
-        insert into db_1023.yl_gh(Pname, Pid, Rcost, Sname, Dno, Rtime)
-        values (#{pname}, #{pid}, #{rcost}, #{sname}, #{dno}, #{rtime})
+        insert into db_1023.yl_gh(Pname, Pid, Rcost, Sname, Dno, Rtime,Psex,Page)
+        values (#{pname},
+
+        #{pid}, #{rcost}, #{sname}, #{dno}, #{rtime},#{psex},#{page})
     </insert>
 
     <!--通过主键修改数据-->
@@ -94,5 +102,19 @@
     <delete id="deleteById">
         delete from db_1023.yl_gh where Rno = #{rno}
     </delete>
+
+
+
+    <!--模糊查  吴腾-->
+    <select id="selectgetAll" resultType="java.util.Map" parameterType="com.slwx.entity.YlGh">
+    select * from db_1023.yl_gh
+    <where>
+        <if test="null !=rno and rno !=''">
+            and rno = #{rno}
+        </if>
+    </where>
+
+    </select>
+
 
 </mapper>

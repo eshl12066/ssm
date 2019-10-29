@@ -2,6 +2,9 @@ package com.slwx.controller;
 
 import com.slwx.entity.YlBs;
 import com.slwx.service.YlBsService;
+import com.slwx.util.JsonData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,13 +15,13 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2019-10-24 16:21:10
  */
-@RestController
+@Controller
 @RequestMapping("ylBs")
 public class YlBsController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private YlBsService ylBsService;
 
     /**
@@ -32,4 +35,10 @@ public class YlBsController {
         return this.ylBsService.queryById(id);
     }
 
+//    @ResponseBody
+//    @RequestMapping("/login")
+//    public JsonData selectOne(Long id) {
+//        JsonData
+//        return this.ylBsService.queryById(id);
+//    }
 }
