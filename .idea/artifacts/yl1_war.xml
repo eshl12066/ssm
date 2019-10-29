@@ -1,6 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="war" name="yl1:war">
     <output-path>$PROJECT_DIR$/yl1/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>yl1</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="archive" name="yl1.war">
       <element id="artifact" artifact-name="yl1:war exploded" />
     </root>

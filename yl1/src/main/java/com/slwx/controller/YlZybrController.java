@@ -32,4 +32,11 @@ public class YlZybrController {
         return this.ylZybrService.queryById(id);
     }
 
+    @GetMapping("addYlZybr")
+    public YlZybr add(YlZybr ylZybr) {
+
+
+        return this.ylZybrService.insert(ylZybr);
+    }
+
 }
