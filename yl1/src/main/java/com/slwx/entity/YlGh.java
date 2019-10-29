@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlGh)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-29 21:48:27
  */
 public class YlGh implements Serializable {
-    private static final long serialVersionUID = -50763298463032274L;
+    private static final long serialVersionUID = 578857667719098227L;
     
     private Long rno;
     

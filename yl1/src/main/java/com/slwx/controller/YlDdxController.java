@@ -1,6 +1,5 @@
 package com.slwx.controller;
 
-import com.slwx.entity.YlDdx;
 import com.slwx.service.YlDdxService;
 import org.springframework.web.bind.annotation.*;
 

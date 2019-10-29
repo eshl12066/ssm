@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlBs)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-29 21:48:27
  */
 public class YlBs implements Serializable {
-    private static final long serialVersionUID = -17087196088467210L;
+    private static final long serialVersionUID = -11194783291886224L;
     
     private Long bid;
     

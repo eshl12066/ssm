@@ -72,7 +72,6 @@ public class YlGhController {
         jsonData.put("pageBean", pageBean);
         System.out.println(jsonData.toString());
         return jsonData;
-        //jijoijojo-
     }
 
 

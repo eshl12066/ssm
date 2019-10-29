@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlSs)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-29 21:48:28
  */
 public class YlSs implements Serializable {
-    private static final long serialVersionUID = -27150756986872366L;
+    private static final long serialVersionUID = -47069341962726671L;
     
     private Long ssid;
     

@@ -1,6 +1,5 @@
 package com.slwx.service;
 
-import com.slwx.entity.YlGysqq;
 import java.util.List;
 
 /**

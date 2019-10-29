@@ -95,4 +95,18 @@
         delete from db_1023.yl_bs where Bid = #{bid}
     </delete>
 
+    <!--  ****************    GD    ***************8 -->
+    <select id="selectgetAll" resultType="java.util.Map" parameterType="com.slwx.entity.YlBs">
+        select * from db_1023.yl_bs
+        <where>
+            <if test="null !=yname and yname !=''">
+                and yname like concat(concat('%', #{yname}),'%')
+            </if>
+            <if test="null !=bren and bren !=''">
+                and bren like concat(concat('%', #{bren}),'%')
+            </if>
+        </where>
+
+    </select>
+
 </mapper>

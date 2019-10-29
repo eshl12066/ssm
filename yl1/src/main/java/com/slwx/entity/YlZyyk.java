@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlZyyk)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:23
+ * @since 2019-10-29 21:48:28
  */
 public class YlZyyk implements Serializable {
-    private static final long serialVersionUID = -45850951754881355L;
+    private static final long serialVersionUID = 438499606257717302L;
     
     private Long zyno;
     

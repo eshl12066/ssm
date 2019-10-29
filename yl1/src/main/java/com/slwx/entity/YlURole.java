@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlURole)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-29 21:48:28
  */
 public class YlURole implements Serializable {
-    private static final long serialVersionUID = 935594351366638602L;
+    private static final long serialVersionUID = -70666389566070115L;
     
     private Long ujid;
     

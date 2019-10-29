@@ -82,6 +82,7 @@ public class YlGhServiceImpl implements YlGhService {
         return this.ylGhDao.deleteById(rno) > 0;
     }
 
+    //***********************GD
     @Override
     public List<Map> selectgetAllPager(YlGh ylGh, PageBean pageBean) {
         return ylGhDao.selectgetAll(ylGh);

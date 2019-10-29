@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlPer)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-29 21:48:28
  */
 public class YlPer implements Serializable {
-    private static final long serialVersionUID = -92904913472366352L;
+    private static final long serialVersionUID = -38304584007161651L;
     
     private Long perid;
     

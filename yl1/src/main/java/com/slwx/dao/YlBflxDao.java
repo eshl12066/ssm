@@ -1,6 +1,5 @@
 package com.slwx.dao;
 
-import com.slwx.entity.YlBflx;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 

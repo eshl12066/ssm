@@ -58,6 +58,7 @@ public interface YlGhService {
      */
     boolean deleteById(Long rno);
 
+    //********************GD
      List<Map> selectgetAllPager(YlGh ylGh, PageBean pageBean);
 
 }

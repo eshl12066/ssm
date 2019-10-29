@@ -1,6 +1,5 @@
 package com.slwx.service.impl;
 
-import com.slwx.entity.YlBxlx;
 import com.slwx.dao.YlBxlxDao;
 import com.slwx.service.YlBxlxService;
 import org.springframework.stereotype.Service;
