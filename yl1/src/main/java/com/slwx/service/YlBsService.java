@@ -1,7 +1,11 @@
 package com.slwx.service;
 
 import com.slwx.entity.YlBs;
+import com.slwx.entity.YlGh;
+import com.slwx.util.PageBean;
+
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlBs)表服务接口
@@ -51,5 +55,8 @@ public interface YlBsService {
      * @return 是否成功
      */
     boolean deleteById(Long bid);
+
+    //********************GD
+    List<Map> selectgetAllPager(YlBs ylBs, PageBean pageBean);
 
 }

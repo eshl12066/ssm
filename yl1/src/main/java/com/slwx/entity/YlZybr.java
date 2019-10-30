@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlZybr)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:23
+ * @since 2019-10-29 21:48:28
  */
 public class YlZybr implements Serializable {
-    private static final long serialVersionUID = 900336720305216086L;
+    private static final long serialVersionUID = -70779904746996531L;
     
     private Long ihno;
     
@@ -24,14 +24,29 @@ public class YlZybr implements Serializable {
     
     private String dadevice;
     
-    private Date itime;
+    private String itime;
     
-    private Date otime;
+    private String otime;
     
     private Integer ychange;
     
     private Long bno;
 
+    public String getOtime() {
+        return otime;
+    }
+
+    public void setOtime(String otime) {
+        this.otime = otime;
+    }
+
+    public String getItime() {
+        return itime;
+    }
+
+    public void setItime(String itime) {
+        this.itime = itime;
+    }
 
     public Long getIhno() {
         return ihno;
@@ -79,22 +94,6 @@ public class YlZybr implements Serializable {
 
     public void setDadevice(String dadevice) {
         this.dadevice = dadevice;
-    }
-
-    public Date getItime() {
-        return itime;
-    }
-
-    public void setItime(Date itime) {
-        this.itime = itime;
-    }
-
-    public Date getOtime() {
-        return otime;
-    }
-
-    public void setOtime(Date otime) {
-        this.otime = otime;
     }
 
     public Integer getYchange() {

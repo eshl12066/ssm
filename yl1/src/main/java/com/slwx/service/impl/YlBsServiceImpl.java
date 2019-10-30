@@ -3,10 +3,12 @@ package com.slwx.service.impl;
 import com.slwx.entity.YlBs;
 import com.slwx.dao.YlBsDao;
 import com.slwx.service.YlBsService;
+import com.slwx.util.PageBean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlBs)表服务实现类
@@ -75,5 +77,11 @@ public class YlBsServiceImpl implements YlBsService {
     @Override
     public boolean deleteById(Long bid) {
         return this.ylBsDao.deleteById(bid) > 0;
+    }
+
+    //*******************GD
+    @Override
+    public List<Map> selectgetAllPager(YlBs ylBs, PageBean pageBean) {
+        return this.ylBsDao.selectgetAll(ylBs);
     }
 }

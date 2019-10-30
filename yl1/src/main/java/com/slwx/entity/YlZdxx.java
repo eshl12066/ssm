@@ -7,14 +7,14 @@ import java.io.Serializable;
  * (YlZdxx)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-29 21:48:28
  */
 public class YlZdxx implements Serializable {
-    private static final long serialVersionUID = 251836178696593336L;
+    private static final long serialVersionUID = -36535299775126388L;
     
     private Long rid;
     
-    private Date ddate;
+    private String ddate;
     
     private String dname;
     
@@ -24,6 +24,13 @@ public class YlZdxx implements Serializable {
     
     private Long sno;
 
+    public String getDdate() {
+        return ddate;
+    }
+
+    public void setDdate(String ddate) {
+        this.ddate = ddate;
+    }
 
     public Long getRid() {
         return rid;
@@ -31,14 +38,6 @@ public class YlZdxx implements Serializable {
 
     public void setRid(Long rid) {
         this.rid = rid;
-    }
-
-    public Date getDdate() {
-        return ddate;
-    }
-
-    public void setDdate(Date ddate) {
-        this.ddate = ddate;
     }
 
     public String getDname() {

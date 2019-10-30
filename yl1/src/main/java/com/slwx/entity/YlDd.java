@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlDd)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-29 21:48:27
  */
 public class YlDd implements Serializable {
-    private static final long serialVersionUID = -52400447340348564L;
+    private static final long serialVersionUID = 557989151819103202L;
     
     private Long ydid;
     

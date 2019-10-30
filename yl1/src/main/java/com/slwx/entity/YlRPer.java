@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlRPer)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-29 21:48:28
  */
 public class YlRPer implements Serializable {
-    private static final long serialVersionUID = 602496525552668698L;
+    private static final long serialVersionUID = 771741949801012849L;
     
     private Long jpid;
     

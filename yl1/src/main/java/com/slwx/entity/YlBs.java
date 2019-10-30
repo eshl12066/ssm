@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlBs)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-29 21:48:27
  */
 public class YlBs implements Serializable {
-    private static final long serialVersionUID = -17087196088467210L;
+    private static final long serialVersionUID = -11194783291886224L;
     
     private Long bid;
     
@@ -22,10 +22,17 @@ public class YlBs implements Serializable {
     
     private String bren;
     
-    private Date btime;
+    private String btime;
     
     private Integer bzt;
 
+    public String getBtime() {
+        return btime;
+    }
+
+    public void setBtime(String btime) {
+        this.btime = btime;
+    }
 
     public Long getBid() {
         return bid;
@@ -65,14 +72,6 @@ public class YlBs implements Serializable {
 
     public void setBren(String bren) {
         this.bren = bren;
-    }
-
-    public Date getBtime() {
-        return btime;
-    }
-
-    public void setBtime(Date btime) {
-        this.btime = btime;
     }
 
     public Integer getBzt() {

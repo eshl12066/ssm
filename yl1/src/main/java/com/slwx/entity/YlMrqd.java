@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlMrqd)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-29 21:48:27
  */
 public class YlMrqd implements Serializable {
-    private static final long serialVersionUID = -42785873564431511L;
+    private static final long serialVersionUID = 586977332806597762L;
     
     private Long mrqdid;
     
@@ -24,8 +24,15 @@ public class YlMrqd implements Serializable {
     
     private Object yzj;
     
-    private Date mtime;
+    private String mtime;
 
+    public String getMtime() {
+        return mtime;
+    }
+
+    public void setMtime(String mtime) {
+        this.mtime = mtime;
+    }
 
     public Long getMrqdid() {
         return mrqdid;
@@ -73,14 +80,6 @@ public class YlMrqd implements Serializable {
 
     public void setYzj(Object yzj) {
         this.yzj = yzj;
-    }
-
-    public Date getMtime() {
-        return mtime;
-    }
-
-    public void setMtime(Date mtime) {
-        this.mtime = mtime;
     }
 
 }

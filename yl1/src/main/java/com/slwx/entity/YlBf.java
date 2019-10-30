@@ -6,15 +6,24 @@ import java.io.Serializable;
  * (YlBf)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:17
+ * @since 2019-10-29 21:48:27
  */
 public class YlBf implements Serializable {
-    private static final long serialVersionUID = -85239612428443059L;
+    private static final long serialVersionUID = 315144741401664655L;
     
     private Long bfid;
     
     private String bfname;
 
+    private Long bflxid;
+
+    public Long getBflxid() {
+        return bflxid;
+    }
+
+    public void setBflxid(Long bflxid) {
+        this.bflxid = bflxid;
+    }
 
     public Long getBfid() {
         return bfid;

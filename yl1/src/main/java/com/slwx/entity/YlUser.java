@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlUser)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:22
+ * @since 2019-10-29 21:48:28
  */
 public class YlUser implements Serializable {
-    private static final long serialVersionUID = 838333021089807215L;
+    private static final long serialVersionUID = 645314825369278971L;
     
     private Long uid;
     

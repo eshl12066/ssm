@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlSs)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:21
+ * @since 2019-10-29 21:48:28
  */
 public class YlSs implements Serializable {
-    private static final long serialVersionUID = -27150756986872366L;
+    private static final long serialVersionUID = -47069341962726671L;
     
     private Long ssid;
     
@@ -20,12 +20,19 @@ public class YlSs implements Serializable {
     
     private Long dno;
     
-    private Date mtime;
+    private String mtime;
     
     private Integer ssmoney;
     
     private Integer sszt;
 
+    public String getMtime() {
+        return mtime;
+    }
+
+    public void setMtime(String mtime) {
+        this.mtime = mtime;
+    }
 
     public Long getSsid() {
         return ssid;
@@ -57,14 +64,6 @@ public class YlSs implements Serializable {
 
     public void setDno(Long dno) {
         this.dno = dno;
-    }
-
-    public Date getMtime() {
-        return mtime;
-    }
-
-    public void setMtime(Date mtime) {
-        this.mtime = mtime;
     }
 
     public Integer getSsmoney() {

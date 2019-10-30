@@ -1,8 +1,10 @@
 package com.slwx.dao;
 
 import com.slwx.entity.YlBs;
+import com.slwx.entity.YlGh;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlBs)表数据库访问层
@@ -61,5 +63,8 @@ public interface YlBsDao {
      * @return 影响行数
      */
     int deleteById(Long bid);
+
+//*********************************************GD
+    List<Map> selectgetAll(YlBs ylBs);
 
 }

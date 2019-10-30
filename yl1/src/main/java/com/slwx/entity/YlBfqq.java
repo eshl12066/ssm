@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (YlBfqq)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:17
+ * @since 2019-10-29 21:48:27
  */
 public class YlBfqq implements Serializable {
-    private static final long serialVersionUID = 820515382627807582L;
+    private static final long serialVersionUID = 862889894124976534L;
     
     private Long qid;
     
@@ -20,12 +20,19 @@ public class YlBfqq implements Serializable {
     
     private String qqd;
     
-    private Date qtime;
+    private String qtime;
     
     private String qnr;
     
     private Integer qzt;
 
+    public String getQtime() {
+        return qtime;
+    }
+
+    public void setQtime(String qtime) {
+        this.qtime = qtime;
+    }
 
     public Long getQid() {
         return qid;
@@ -57,14 +64,6 @@ public class YlBfqq implements Serializable {
 
     public void setQqd(String qqd) {
         this.qqd = qqd;
-    }
-
-    public Date getQtime() {
-        return qtime;
-    }
-
-    public void setQtime(Date qtime) {
-        this.qtime = qtime;
     }
 
     public String getQnr() {

@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (YlBxlx)实体类
  *
  * @author makejava
- * @since 2019-10-23 16:41:18
+ * @since 2019-10-29 21:48:27
  */
 public class YlBxlx implements Serializable {
-    private static final long serialVersionUID = -19148455021880983L;
+    private static final long serialVersionUID = -42941505503163137L;
     
     private Long bno;
     
