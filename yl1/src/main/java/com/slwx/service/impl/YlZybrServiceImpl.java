@@ -49,9 +49,9 @@ public class YlZybrServiceImpl implements YlZybrService {
      * @return 实例对象
      */
     @Override
-    public YlZybr insert(YlZybr ylZybr) {
-        this.ylZybrDao.insert(ylZybr);
-        return ylZybr;
+    public int insert(YlZybr ylZybr) {
+        int insert = this.ylZybrDao.insert(ylZybr);
+        return insert;
     }
 
     /**

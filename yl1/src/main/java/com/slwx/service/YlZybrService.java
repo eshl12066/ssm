@@ -35,7 +35,7 @@ public interface YlZybrService {
      * @param ylZybr 实例对象
      * @return 实例对象
      */
-    YlZybr insert(YlZybr ylZybr);
+    int insert(YlZybr ylZybr);
 
     /**
      * 修改数据
