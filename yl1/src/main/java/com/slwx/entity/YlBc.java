@@ -13,7 +13,7 @@ public class YlBc implements Serializable {
     
     private Long bcid;
     
-    private Long bcname;
+    private String bcname;
     
     private Long bfid;
     
@@ -30,11 +30,11 @@ public class YlBc implements Serializable {
         this.bcid = bcid;
     }
 
-    public Long getBcname() {
+    public String getBcname() {
         return bcname;
     }
 
-    public void setBcname(Long bcname) {
+    public void setBcname(String bcname) {
         this.bcname = bcname;
     }
 

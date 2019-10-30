@@ -24,8 +24,15 @@ public class YlGh implements Serializable {
     
     private Long dno;
     
-    private Date rtime;
+    private String rtime;
 
+    public String getRtime() {
+        return rtime;
+    }
+
+    public void setRtime(String rtime) {
+        this.rtime = rtime;
+    }
 
     public Long getRno() {
         return rno;
@@ -73,14 +80,6 @@ public class YlGh implements Serializable {
 
     public void setDno(Long dno) {
         this.dno = dno;
-    }
-
-    public Date getRtime() {
-        return rtime;
-    }
-
-    public void setRtime(Date rtime) {
-        this.rtime = rtime;
     }
 
 }

@@ -1,5 +1,7 @@
 package com.slwx.service;
 
+import com.slwx.entity.YlMrqd;
+
 import java.util.List;
 
 /**

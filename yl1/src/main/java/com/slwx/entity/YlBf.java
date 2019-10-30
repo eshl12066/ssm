@@ -15,6 +15,15 @@ public class YlBf implements Serializable {
     
     private String bfname;
 
+    private Long bflxid;
+
+    public Long getBflxid() {
+        return bflxid;
+    }
+
+    public void setBflxid(Long bflxid) {
+        this.bflxid = bflxid;
+    }
 
     public Long getBfid() {
         return bfid;

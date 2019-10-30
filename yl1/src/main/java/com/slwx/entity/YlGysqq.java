@@ -20,10 +20,17 @@ public class YlGysqq implements Serializable {
     
     private Long gysid;
     
-    private Date gtime;
+    private String gtime;
     
     private Integer gzt;
 
+    public String getGtime() {
+        return gtime;
+    }
+
+    public void setGtime(String gtime) {
+        this.gtime = gtime;
+    }
 
     public Long getGid() {
         return gid;
@@ -55,14 +62,6 @@ public class YlGysqq implements Serializable {
 
     public void setGysid(Long gysid) {
         this.gysid = gysid;
-    }
-
-    public Date getGtime() {
-        return gtime;
-    }
-
-    public void setGtime(Date gtime) {
-        this.gtime = gtime;
     }
 
     public Integer getGzt() {

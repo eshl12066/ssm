@@ -24,14 +24,29 @@ public class YlZybr implements Serializable {
     
     private String dadevice;
     
-    private Date itime;
+    private String itime;
     
-    private Date otime;
+    private String otime;
     
     private Integer ychange;
     
     private Long bno;
 
+    public String getOtime() {
+        return otime;
+    }
+
+    public void setOtime(String otime) {
+        this.otime = otime;
+    }
+
+    public String getItime() {
+        return itime;
+    }
+
+    public void setItime(String itime) {
+        this.itime = itime;
+    }
 
     public Long getIhno() {
         return ihno;
@@ -79,22 +94,6 @@ public class YlZybr implements Serializable {
 
     public void setDadevice(String dadevice) {
         this.dadevice = dadevice;
-    }
-
-    public Date getItime() {
-        return itime;
-    }
-
-    public void setItime(Date itime) {
-        this.itime = itime;
-    }
-
-    public Date getOtime() {
-        return otime;
-    }
-
-    public void setOtime(Date otime) {
-        this.otime = otime;
     }
 
     public Integer getYchange() {

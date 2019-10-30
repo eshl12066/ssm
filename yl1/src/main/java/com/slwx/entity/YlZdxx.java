@@ -14,7 +14,7 @@ public class YlZdxx implements Serializable {
     
     private Long rid;
     
-    private Date ddate;
+    private String ddate;
     
     private String dname;
     
@@ -24,6 +24,13 @@ public class YlZdxx implements Serializable {
     
     private Long sno;
 
+    public String getDdate() {
+        return ddate;
+    }
+
+    public void setDdate(String ddate) {
+        this.ddate = ddate;
+    }
 
     public Long getRid() {
         return rid;
@@ -31,14 +38,6 @@ public class YlZdxx implements Serializable {
 
     public void setRid(Long rid) {
         this.rid = rid;
-    }
-
-    public Date getDdate() {
-        return ddate;
-    }
-
-    public void setDdate(Date ddate) {
-        this.ddate = ddate;
     }
 
     public String getDname() {

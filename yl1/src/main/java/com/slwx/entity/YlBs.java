@@ -22,10 +22,17 @@ public class YlBs implements Serializable {
     
     private String bren;
     
-    private Date btime;
+    private String btime;
     
     private Integer bzt;
 
+    public String getBtime() {
+        return btime;
+    }
+
+    public void setBtime(String btime) {
+        this.btime = btime;
+    }
 
     public Long getBid() {
         return bid;
@@ -65,14 +72,6 @@ public class YlBs implements Serializable {
 
     public void setBren(String bren) {
         this.bren = bren;
-    }
-
-    public Date getBtime() {
-        return btime;
-    }
-
-    public void setBtime(Date btime) {
-        this.btime = btime;
     }
 
     public Integer getBzt() {

@@ -24,8 +24,15 @@ public class YlMrqd implements Serializable {
     
     private Object yzj;
     
-    private Date mtime;
+    private String mtime;
 
+    public String getMtime() {
+        return mtime;
+    }
+
+    public void setMtime(String mtime) {
+        this.mtime = mtime;
+    }
 
     public Long getMrqdid() {
         return mrqdid;
@@ -73,14 +80,6 @@ public class YlMrqd implements Serializable {
 
     public void setYzj(Object yzj) {
         this.yzj = yzj;
-    }
-
-    public Date getMtime() {
-        return mtime;
-    }
-
-    public void setMtime(Date mtime) {
-        this.mtime = mtime;
     }
 
 }

@@ -22,10 +22,17 @@ public class YlZy implements Serializable {
     
     private Long zdks;
     
-    private Date zytime;
+    private String zytime;
     
     private String zyyy;
 
+    public String getZytime() {
+        return zytime;
+    }
+
+    public void setZytime(String zytime) {
+        this.zytime = zytime;
+    }
 
     public Long getZyid() {
         return zyid;
@@ -65,14 +72,6 @@ public class YlZy implements Serializable {
 
     public void setZdks(Long zdks) {
         this.zdks = zdks;
-    }
-
-    public Date getZytime() {
-        return zytime;
-    }
-
-    public void setZytime(Date zytime) {
-        this.zytime = zytime;
     }
 
     public String getZyyy() {

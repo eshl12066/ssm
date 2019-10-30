@@ -1,6 +1,7 @@
 package com.slwx.service.impl;
 
 import com.slwx.dao.YlBxlxDao;
+import com.slwx.entity.YlBxlx;
 import com.slwx.service.YlBxlxService;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +19,20 @@ public class YlBxlxServiceImpl implements YlBxlxService {
     @Resource
     private YlBxlxDao ylBxlxDao;
 
-    /**
+   /* *//**
      * 通过ID查询单条数据
      *
      * @param bno 主键
      * @return 实例对象
-     */
+     *//*
     @Override
     public YlBxlx queryById(Long bno) {
         return this.ylBxlxDao.queryById(bno);
+    }*/
+
+    @Override
+    public YlBxlx queryById(Long bno) {
+        return null;
     }
 
     /**

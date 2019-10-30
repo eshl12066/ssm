@@ -20,12 +20,19 @@ public class YlSs implements Serializable {
     
     private Long dno;
     
-    private Date mtime;
+    private String mtime;
     
     private Integer ssmoney;
     
     private Integer sszt;
 
+    public String getMtime() {
+        return mtime;
+    }
+
+    public void setMtime(String mtime) {
+        this.mtime = mtime;
+    }
 
     public Long getSsid() {
         return ssid;
@@ -57,14 +64,6 @@ public class YlSs implements Serializable {
 
     public void setDno(Long dno) {
         this.dno = dno;
-    }
-
-    public Date getMtime() {
-        return mtime;
-    }
-
-    public void setMtime(Date mtime) {
-        this.mtime = mtime;
     }
 
     public Integer getSsmoney() {
