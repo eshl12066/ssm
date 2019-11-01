@@ -1,8 +1,10 @@
 package com.slwx.dao;
 
+import com.slwx.entity.YlGh;
 import com.slwx.entity.YlZybr;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlZybr)表数据库访问层
@@ -62,4 +64,5 @@ public interface YlZybrDao {
      */
     int deleteById(Long ihno);
 
+    List<Map> list(YlZybr ylZybr);
 }

@@ -9,10 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author 阳某
- * @create 2019-09-24 15:01
- */
 
 /**
  *   第一个*代表返回类型不限

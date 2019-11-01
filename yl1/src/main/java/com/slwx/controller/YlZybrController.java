@@ -3,12 +3,14 @@ package com.slwx.controller;
 import com.slwx.entity.YlZybr;
 import com.slwx.service.YlZybrService;
 import com.slwx.util.JsonData;
+import com.slwx.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 /**
  * (YlZybr)表控制层
@@ -46,4 +48,34 @@ public class YlZybrController {
         return  JsonData;
     }
 
+    @ResponseBody
+    @RequestMapping("/list")
+    public JsonData getAllPager(YlZybr ylZybr, HttpServletRequest request) {
+        PageBean pageBean = new PageBean();
+        pageBean.setRequest(request);
+        JsonData jsonData = null;
+        List<Map> list = this.ylZybrService.listPager(ylZybr,pageBean);
+        jsonData = new JsonData(1, "操作成功", list);
+        jsonData.put("pageBean", pageBean);
+//        System.out.println(jsonData.toString());
+        return jsonData;
+    }
+
+    @ResponseBody
+    @RequestMapping("/editYlZybr")
+    public JsonData editYlZybr(YlZybr ylZybr, HttpServletRequest request) {
+        JsonData jsonData = null;
+        YlZybr update = this.ylZybrService.update(ylZybr);
+        jsonData = new JsonData(1, "修改成功", update);
+        return jsonData;
+    }
+
+    @ResponseBody
+    @RequestMapping("/deleteById")
+    public JsonData deleteById(YlZybr ylZybr, HttpServletRequest request) {
+        JsonData jsonData = null;
+        boolean b = this.ylZybrService.deleteById(ylZybr.getIhno());
+        jsonData = new JsonData(1, "删除成功", b);
+        return jsonData;
+    }
 }

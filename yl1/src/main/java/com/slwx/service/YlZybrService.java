@@ -1,8 +1,10 @@
 package com.slwx.service;
 
 import com.slwx.entity.YlZybr;
+import com.slwx.util.PageBean;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlZybr)表服务接口
@@ -53,4 +55,6 @@ public interface YlZybrService {
      */
     boolean deleteById(Long ihno);
 
+    //////////////////
+    List<Map> listPager(YlZybr ylZybr, PageBean pageBean);
 }

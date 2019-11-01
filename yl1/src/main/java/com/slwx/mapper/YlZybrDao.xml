@@ -116,4 +116,43 @@
         delete from db_1023.yl_zybr where IHno = #{ihno}
     </delete>
 
+
+
+    <select id="list" resultType="java.util.Map" parameterType="com.slwx.entity.YlZybr">
+        select
+        IHno, Bfid, Brname, Bcid, Dno, Dadevice, ITime, Otime, Ychange, Bno
+        from db_1023.yl_zybr
+        <where>
+            <if test="ihno != null">
+                and IHno = #{ihno}
+            </if>
+            <if test="bfid != null">
+                and Bfid = #{bfid}
+            </if>
+            <if test="brname != null and brname != ''">
+                and Brname = #{brname}
+            </if>
+            <if test="bcid != null">
+                and Bcid = #{bcid}
+            </if>
+            <if test="dno != null">
+                and Dno = #{dno}
+            </if>
+            <if test="dadevice != null and dadevice != ''">
+                and Dadevice = #{dadevice}
+            </if>
+            <if test="itime != null">
+                and ITime = #{itime}
+            </if>
+            <if test="otime != null">
+                and Otime = #{otime}
+            </if>
+            <if test="ychange != null">
+                and Ychange = #{ychange}
+            </if>
+            <if test="bno != null">
+                and Bno = #{bno}
+            </if>
+        </where>
+    </select>
 </mapper>

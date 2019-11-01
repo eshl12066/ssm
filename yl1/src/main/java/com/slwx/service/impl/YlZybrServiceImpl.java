@@ -3,10 +3,12 @@ package com.slwx.service.impl;
 import com.slwx.entity.YlZybr;
 import com.slwx.dao.YlZybrDao;
 import com.slwx.service.YlZybrService;
+import com.slwx.util.PageBean;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * (YlZybr)表服务实现类
@@ -29,7 +31,6 @@ public class YlZybrServiceImpl implements YlZybrService {
     public YlZybr queryById(Long ihno) {
         return this.ylZybrDao.queryById(ihno);
     }
-
     /**
      * 查询多条数据
      *
@@ -76,4 +77,21 @@ public class YlZybrServiceImpl implements YlZybrService {
     public boolean deleteById(Long ihno) {
         return this.ylZybrDao.deleteById(ihno) > 0;
     }
+
+    /////////////////////////////////
+
+    @Override
+    public List<Map> listPager(YlZybr ylZybr, PageBean pageBean) {
+        return this.ylZybrDao.list(ylZybr);
+    }
+
+
+
+
+
+
+
+
+
+
 }
